@@ -23,7 +23,7 @@ for result in results:
     serverResponse, serverContent = splunk.rest.simpleRequest('/services/notable_update', sessionKey=sessionKey, method='POST', postargs=args)
 
     if serverResponse['status'] != '200':
-	splunk.Intersplunk.generateErrorResults(serverContent)
+        splunk.Intersplunk.generateErrorResults(serverContent)
     else:
         result['updatenotable_result'] = serverContent
 
